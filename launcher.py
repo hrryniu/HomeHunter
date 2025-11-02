@@ -22,7 +22,7 @@ def main():
         # Fallback: try to find streamlit in PATH
         streamlit_path = 'streamlit'
     
-    print("🏡 Starting HomeHunter...")
+    print("🏡 Starting HaWooPa Hunter...")
     print("Please wait while Streamlit initializes...")
     
     # Launch Streamlit in the background

@@ -1,5 +1,5 @@
 """
-macOS Application Build Script for HomeHunter
+macOS Application Build Script for HaWooPa Hunter
 
 This script uses py2app to create a standalone macOS .app bundle.
 
@@ -8,7 +8,7 @@ Requirements:
 
 Usage:
     python build_mac_app.py py2app
-    open dist/HomeHunter.app
+    open dist/HaWooPa Hunter.app
 """
 
 from setuptools import setup
@@ -29,9 +29,9 @@ OPTIONS = {
     'excludes': ['matplotlib', 'numpy', 'scipy'],
     'iconfile': 'assets/icon.icns' if os.path.exists('assets/icon.icns') else None,
     'plist': {
-        'CFBundleName': 'HomeHunter',
-        'CFBundleDisplayName': 'HomeHunter',
-        'CFBundleIdentifier': 'com.homehunter.app',
+        'CFBundleName': 'HaWooPa Hunter',
+        'CFBundleDisplayName': 'HaWooPa Hunter',
+        'CFBundleIdentifier': 'com.hawoopa.hunter.app',
         'CFBundleVersion': '1.0',
         'CFBundleShortVersionString': '1.0',
         'CFBundleIconFile': 'icon.icns',
@@ -43,7 +43,7 @@ OPTIONS = {
 
 setup(
     app=APP,
-    name='HomeHunter',
+    name='HaWooPa Hunter',
     data_files=DATA_FILES,
     options={'py2app': OPTIONS},
     setup_requires=['py2app'],

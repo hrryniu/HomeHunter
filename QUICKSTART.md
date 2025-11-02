@@ -1,6 +1,6 @@
 # 🚀 Quick Start Guide
 
-Get HomeHunter up and running in 3 minutes!
+Get HaWooPa Hunter up and running in 3 minutes!
 
 ## Step 1: Install Dependencies
 
@@ -54,7 +54,7 @@ If you want to package as a standalone macOS app:
 ```bash
 pip install py2app
 python build_mac_app.py py2app
-open dist/HomeHunter.app
+open dist/HaWooPa Hunter.app
 ```
 
 **Note:** Make sure you have `assets/icon.icns` before building.
@@ -70,8 +70,8 @@ open dist/HomeHunter.app
 - See `SETUP_ASSETS.md` for creating them
 
 ### Database Issues
-- The SQLite database (`homehunter.db`) is created automatically
-- Delete it to reset: `rm homehunter.db`
+- The SQLite database (`hawoopa.db`) is created automatically
+- Delete it to reset: `rm hawoopa.db`
 
 ---
 

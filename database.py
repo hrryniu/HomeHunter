@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-DB_PATH = "homehunter.db"
+DB_PATH = "hawoopa.db"
 
 def get_connection():
     """Create and return a database connection."""

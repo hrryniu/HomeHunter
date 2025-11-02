@@ -12,7 +12,7 @@ To push your code to a remote repository (GitHub, GitLab, etc.), follow these st
 
 1. **Create a new repository on GitHub:**
    - Go to https://github.com/new
-   - Name it: `HomeHunter` or `wyszukiwarka-mieszkan`
+   - Name it: `HaWooPa-Hunter` or `wyszukiwarka-mieszkan`
    - Choose Public or Private
    - **Don't** initialize with README, .gitignore, or license (we already have these)
    - Click "Create repository"

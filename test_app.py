@@ -109,7 +109,7 @@ def test_scrapers():
         return False
 
 if __name__ == '__main__':
-    print("🏡 HomeHunter Test Suite\n")
+    print("🏡 HaWooPa Hunter Test Suite\n")
     
     all_passed = True
     

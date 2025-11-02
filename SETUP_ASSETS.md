@@ -1,6 +1,6 @@
 # 🎨 Asset Setup Guide
 
-This guide explains how to set up the logo and icon files for HomeHunter.
+This guide explains how to set up the logo and icon files for HaWooPa Hunter.
 
 ## Required Assets
 

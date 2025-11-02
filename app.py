@@ -16,7 +16,7 @@ from scrapers.nieruchomosci_online_scraper import fetch_nieruchomosci_online
 
 # Page configuration
 st.set_page_config(
-    page_title="HomeHunter",
+    page_title="HaWooPa Hunter",
     page_icon="🏡",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -71,7 +71,7 @@ if 'browser_opened' not in st.session_state:
 # Header
 if os.path.exists("assets/icon.png"):
     st.image("assets/icon.png", width=80)
-st.title("🏡 HomeHunter – Wyszukiwarka domów i mieszkań pod Wrocławiem")
+st.title("🏡 HaWooPa Hunter – Wyszukiwarka domów i mieszkań pod Wrocławiem")
 st.markdown("---")
 
 # Sidebar
@@ -281,7 +281,7 @@ else:
 st.markdown("---")
 st.markdown("""
     <div style="text-align: center; color: #666; padding: 2rem;">
-        <p>🏡 HomeHunter v1.0 | Made with ❤️ for finding your dream home</p>
+        <p>🏡 HaWooPa Hunter v1.0 | Made with ❤️ for finding your dream home</p>
     </div>
 """, unsafe_allow_html=True)
 

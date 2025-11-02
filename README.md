@@ -1,6 +1,6 @@
-# 🏡 HomeHunter – Wyszukiwarka domów i mieszkań
+# 🏡 HaWooPa Hunter – Wyszukiwarka domów i mieszkań
 
-HomeHunter to aplikacja do wyszukiwania nieruchomości w Polsce, która agreguje oferty z wielu popularnych portali nieruchomościowych (Otodom, OLX, Nieruchomości-Online).
+HaWooPa Hunter to aplikacja do wyszukiwania nieruchomości w Polsce, która agreguje oferty z wielu popularnych portali nieruchomościowych (Otodom, OLX, Nieruchomości-Online).
 
 ## ✨ Funkcje
 
@@ -62,7 +62,7 @@ python build_mac_app.py py2app
 
 3. Uruchom aplikację:
 ```bash
-open dist/HomeHunter.app
+open dist/HaWooPa Hunter.app
 ```
 
 **Uwaga:** Przed pakowaniem upewnij się, że:
@@ -72,7 +72,7 @@ open dist/HomeHunter.app
 ## 📁 Struktura projektu
 
 ```
-homehunter/
+hawoopa-hunter/
 ├── app.py                              # Główna aplikacja Streamlit
 ├── database.py                         # Moduł bazy danych SQLite
 ├── launcher.py                         # Skrypt uruchamiający dla macOS

@@ -1,11 +1,11 @@
 #!/bin/bash
-# Instructions to push HomeHunter to GitHub
+# Instructions to push HaWooPa Hunter to GitHub
 # Replace YOUR_USERNAME and YOUR_REPO_NAME with your actual values
 
 echo "🔗 Setting up remote and pushing to GitHub..."
 echo ""
 echo "Step 1: Create a new repository on GitHub at https://github.com/new"
-echo "        Name it: HomeHunter (or wyszukiwarka-mieszkan)"
+echo "        Name it: HaWooPa-Hunter (or wyszukiwarka-mieszkan)"
 echo "        Don't initialize with README, .gitignore, or license"
 echo ""
 read -p "Press Enter after you've created the repository..."

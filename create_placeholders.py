@@ -1,5 +1,5 @@
 """
-Script to create placeholder logo images and icon for HomeHunter.
+Script to create placeholder logo images and icon for HaWooPa Hunter.
 
 This creates simple placeholder images that you can replace later with actual logos.
 """
