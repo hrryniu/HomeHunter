@@ -1,7 +1,7 @@
 import asyncio
 import random
 
-async def fetch_nieruchomosci_online(location="Wrocław", radius=10, price_min=0, price_max=5000000, property_type="Wszystkie"):
+async def fetch_nieruchomosci_online(location="Wrocław", radius=10, price_min=0, price_max=5000000, property_type="Wszystkie", limit=150):
     """Mock scraper for Nieruchomosci-Online website.
     
     Args:
@@ -18,7 +18,7 @@ async def fetch_nieruchomosci_online(location="Wrocław", radius=10, price_min=0
     await asyncio.sleep(random.uniform(0.5, 1.8))
     
     # Generate mock data
-    num_results = random.randint(3, 8)
+    num_results = int(limit)
     results = []
     
     # Wrocław coordinates (approximate center)

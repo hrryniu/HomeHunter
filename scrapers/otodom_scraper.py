@@ -1,7 +1,7 @@
 import asyncio
 import random
 
-async def fetch_otodom(location="Wrocław", radius=10, price_min=0, price_max=5000000, property_type="Wszystkie"):
+async def fetch_otodom(location="Wrocław", radius=10, price_min=0, price_max=5000000, property_type="Wszystkie", limit=150):
     """Mock scraper for Otodom website.
     
     Args:
@@ -18,7 +18,7 @@ async def fetch_otodom(location="Wrocław", radius=10, price_min=0, price_max=50
     await asyncio.sleep(random.uniform(0.5, 1.5))
     
     # Generate mock data
-    num_results = random.randint(5, 12)
+    num_results = int(limit)
     results = []
     
     # Wrocław coordinates (approximate center)

@@ -25,35 +25,34 @@ st.set_page_config(
 # Initialize database
 init_db()
 
-# Custom CSS for elegant design
-st.markdown("""
-    <style>
-    .main {
-        background-color: #ffffff;
-    }
-    .property-card {
-        background-color: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .price {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #2563eb;
-    }
-    .title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-    .logo-img {
-        width: 30px;
-        height: 30px;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# Theme support (light/dark) and base styles
+def apply_theme(is_light: bool) -> None:
+    if is_light:
+        st.markdown("""
+            <style>
+            .main { background-color: #ffffff; }
+            .property-card { background-color: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            .price { font-size: 1.5rem; font-weight: bold; color: #2563eb; }
+            .title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+            .logo-img { width: 30px; height: 30px; }
+            </style>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+            <style>
+            .main { background-color: #0b0e14; }
+            .property-card { background-color: #111827; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+            .price { font-size: 1.5rem; font-weight: bold; color: #60a5fa; }
+            .title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: #e5e7eb; }
+            .logo-img { width: 30px; height: 30px; }
+            .stMarkdown, .stText, .stButton, .stRadio, .stSelectbox, .stNumberInput, .stSlider, .stTextInput { color: #e5e7eb !important; }
+            </style>
+        """, unsafe_allow_html=True)
+
+# Initialize theme state and apply
+if 'light_mode' not in st.session_state:
+    st.session_state.light_mode = True
+apply_theme(st.session_state.light_mode)
 
 # Helper function to open browser
 def open_in_browser():
@@ -82,6 +81,9 @@ with st.sidebar:
         ["🔍 Szukaj ofert", "❤️ Ulubione"],
         key="page_selector"
     )
+    st.session_state.light_mode = st.toggle("🌞 Jasny motyw", value=st.session_state.light_mode)
+    # Re-apply theme if toggled
+    apply_theme(st.session_state.light_mode)
 
 # Main search page
 if page == "🔍 Szukaj ofert":
@@ -98,6 +100,7 @@ if page == "🔍 Szukaj ofert":
     with col2:
         price_min = st.number_input("💰 Cena minimalna (PLN)", 0, 10000000, 0, step=50000)
         price_max = st.number_input("💰 Cena maksymalna (PLN)", 0, 10000000, 5000000, step=50000)
+        limit_per_source = st.number_input("📦 Maks. wyników na źródło", min_value=10, max_value=1000, value=150, step=10, help="Ile ofert pobrać z każdego źródła (mock)")
     
     search_button = st.button("🔍 Szukaj ofert", type="primary", use_container_width=True)
     
@@ -108,9 +111,9 @@ if page == "🔍 Szukaj ofert":
             asyncio.set_event_loop(loop)
             results = loop.run_until_complete(
                 asyncio.gather(
-                    fetch_otodom(location, radius, price_min, price_max, property_type),
-                    fetch_olx(location, radius, price_min, price_max, property_type),
-                    fetch_nieruchomosci_online(location, radius, price_min, price_max, property_type),
+                    fetch_otodom(location, radius, price_min, price_max, property_type, limit_per_source),
+                    fetch_olx(location, radius, price_min, price_max, property_type, limit_per_source),
+                    fetch_nieruchomosci_online(location, radius, price_min, price_max, property_type, limit_per_source),
                     return_exceptions=True
                 )
             )

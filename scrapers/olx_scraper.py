@@ -1,7 +1,7 @@
 import asyncio
 import random
 
-async def fetch_olx(location="Wrocław", radius=10, price_min=0, price_max=5000000, property_type="Wszystkie"):
+async def fetch_olx(location="Wrocław", radius=10, price_min=0, price_max=5000000, property_type="Wszystkie", limit=150):
     """Mock scraper for OLX website.
     
     Args:
@@ -18,7 +18,7 @@ async def fetch_olx(location="Wrocław", radius=10, price_min=0, price_max=50000
     await asyncio.sleep(random.uniform(0.5, 2.0))
     
     # Generate mock data
-    num_results = random.randint(4, 10)
+    num_results = int(limit)
     results = []
     
     # Wrocław coordinates (approximate center)
